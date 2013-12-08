@@ -4,7 +4,7 @@
   <title><![CDATA[Tyler Argo's Blog]]></title>
   <link href="http://argo49.github.io/atom.xml" rel="self"/>
   <link href="http://argo49.github.io/"/>
-  <updated>2013-12-08T16:41:34-05:00</updated>
+  <updated>2013-12-08T16:55:35-05:00</updated>
   <id>http://argo49.github.io/</id>
   <author>
     <name><![CDATA[Tyler Argo]]></name>
@@ -23,10 +23,11 @@
 <p>My name is Tyler Argo. I&#8217;m a software engineering student studying at Concordia University in Montreal Canada. I like coding, watching Netflix and lifting heavy objects, not necessarily all at the same time. On this blog you can expect to find posts about code and whatever else piques my interest or inspires me enough to write about it.</p>
 
 
-<p>I have a feeling I’ll be using this a mostly just to summarize the things I read, whether that be textbooks or online articles, to serve as a memory aid for when I’m programming. Hopefully it can serve others in the same way.</p>
+<p>I have a feeling I’ll be using this blog mostly just to summarize the things I read, whether that be textbooks or online articles, to serve as a memory aid for when I’m programming. Hopefully it can serve others in the same way. Who knows, maybe I&#8217;ll even be a little bit entertaining :)</p>
 
 
 <p>This blog was created using the power of Octopress. <a href="http://octopress.org">Is rly good</a>.</p>
+
 ]]></content>
   </entry>
   
