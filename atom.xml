@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[rlyGoodCode]]></title>
+  <title><![CDATA[99lines]]></title>
   <link href="http://argo49.github.io/atom.xml" rel="self"/>
   <link href="http://argo49.github.io/"/>
-  <updated>2013-12-15T17:49:54-05:00</updated>
+  <updated>2013-12-16T22:38:03-05:00</updated>
   <id>http://argo49.github.io/</id>
   <author>
     <name><![CDATA[Tyler Argo]]></name>
@@ -14,13 +14,82 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Boutysource: A Bountiful Force for Open Source]]></title>
+    <link href="http://argo49.github.io/blog/2013/12/16/boutysource-a-bountiful-force-for-open-source/"/>
+    <updated>2013-12-16T20:50:45-05:00</updated>
+    <id>http://argo49.github.io/blog/2013/12/16/boutysource-a-bountiful-force-for-open-source</id>
+    <content type="html"><![CDATA[<p>Bountysource is an open source project that allows users (or anybody really) that wants to see a feature or bug-fix implemented in an open source project post a bounty for it. What is a bounty? Anybody who&#8217;s a member of Stack Overflow (or watched Dog the Bounty Hunter) knows that a bounty is a sum of money offered in return for the solution of a problem. Sounds like the service industry right? Except instead of trusting the solution to professionals, it&#8217;s left open to the general public. Anyone who thinks they can provide a solution can try, but only one person will have their solution accepted and will be paid.</p>
+
+
+
+
+<p>An example: Company A is working on a project that uses an open source tool that hasnt been maintained for a while because the people who maintain it have mostly stopped development on the project due to a lack of interest/funding. Company A would really like to see feautre X in the tool. Otherwise, they&#8217;ll have to remove the tool from their project and start again from scratch with something else that has that feature. The problem is that that takes time and money and it might not suit all their other needs. In swoops Boutnycource in all it&#8217;s greenish glory! Company A posts a bounty of Y dollars on Bountysource. John the part-time developer sees this bounty, knows he could add the feature in a reasonable amount of time and sets to work on it. A short time later, the feature is implemented, John gets paid and Company A has saved lots of time and money. That&#8217;s just one idyllic scenario that makes Bountysource so attractive.</p>
+
+
+
+
+<p>Esentially, Bountysource is to open source development what <a href="http://kickstarter.com">Kickstarter</a> is to other projects, with one important twist; rather than having the people pledge money to companies for new software features, they pay the people to develop new software features. Sounds neat right? They&#8217;re changing the Kickstarter formula by flipping it on it&#8217;s head and asking for work in return for cash.</p>
+
+
+
+
+<p>Of course, it would be ridiculous to ditch what made kickstarter so successful and so they also have a section for fundraisers that work with pledges, the way you&#8217;d expect.</p>
+
+
+
+
+<h2>How does it work?</h2>
+
+
+<p><a href="https://www.bountysource.com/faq">An excerpt from the Bountysource FAQ:</a></p>
+
+<blockquote>
+    <h3>How Bounties Work:</h3>
+    <ol>
+        <li>Users find bounties on open issues or feature requests they want to see addressed.</li>
+        <li>These users spread the word about the bounty, enticing developers to create a solution.</li>
+        <li>Developers create solutions and claim the bounty on Bountysource.</li>
+        <li>Backers can accept or reject the claim.</li>
+        <li>If accepted, Bountysource pays the bounty to the developer.</li>
+    </ol>
+    <h3>How Fundraisers Work:</h3>
+    <ol>
+        <li>Anyone can come to Bountysource and create a Fundraiser. Open-source fundraisers are typically used to raise money for new projects, big updates to existing projects, or to raise money for bounties.</li>
+        <li>The Fundraiser creator spreads the word about the Fundraiser to the appropriate communities.</li>
+        <li>Users find bounties on open issues or feature requests they want to see addressed.</li>
+        <li>Users find bounties on open issues or feature requests they want to see addressed.</li>
+        <li>Users find bounties on open issues or feature requests they want to see addressed.</li>
+    </ol>
+</blockquote>
+
+
+
+
+<p>It&#8217;s point number four of how bounties work that has me slightly wary. But that is a very small slightly. I&#8217;m sure you&#8217;ve heard stories of Kickstarter projects running out of funding halfway through development and leaving all those contributors penniless with nothing to show for it. I can see the same happening here where one project posts a large bounty, someone puts many weekends into it and are rewarded with a big fat &#8216;this did not meet our required specifications&#8217; even though it does and then they never get paid.</p>
+
+
+
+
+<p>From what I can tell, right now the service is mostly being used to power web development projects and other tools. It would be neat to see something like this applied to a gaming project. If you can get a talented and enthusiastic enough group of people to back a project with their work, I think some really creative and impressive things can come from this approach.</p>
+
+
+
+
+<p><a href="http://net.tutsplus.com/articles/easy-ways-to-contribute-to-open-source-projects/">When I first read about Bountysource</a>, I got all excited and warm and fuzzy inside. Maybe I&#8217;m naive, but this really does sound like an amazing idea, and with sites like GitHub around making open source project contribution a simple thing, I think Bountysource has a very promising future. Now pardon me while I go hunt some bounties :3 </p>
+
+
+<p><img src="../images/boba_fett.jpg" ></img></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Mandatory 'Hello World' Post]]></title>
     <link href="http://argo49.github.io/blog/2013/12/08/mandatory-hello-world-post/"/>
     <updated>2013-12-08T12:58:23-05:00</updated>
     <id>http://argo49.github.io/blog/2013/12/08/mandatory-hello-world-post</id>
     <content type="html"><![CDATA[<p>Hello World!</p>
 
-<p>My name is Tyler Argo. I&#8217;m a software engineering student studying at Concordia University in Montreal Canada. I like coding, watching Netflix and lifting heavy objects, not necessarily all at the same time. On this blog you can expect to find posts about code and whatever else piques my interest or inspires me enough to write about it.</p>
+<p>My name is Tyler Argo. I&#8217;m a software engineering student studying at Concordia University in Montreal, Canada. I like coding, watching Netflix and lifting heavy objects, not necessarily all at the same time. On this blog you can expect to find posts about code and whatever else piques my interest or inspires me enough to write about it.</p>
 
 
 <p>I have a feeling I’ll be using this blog mostly just to summarize the things I read, whether that be textbooks or online articles, to serve as a memory aid for when I’m programming. Hopefully it can serve others in the same way. Who knows, maybe I&#8217;ll even be a little bit entertaining :)</p>
