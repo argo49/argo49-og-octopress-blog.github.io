@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[99lines]]></title>
+  <title><![CDATA[Whitespaces and Curly Braces]]></title>
   <link href="http://argo49.github.io/atom.xml" rel="self"/>
   <link href="http://argo49.github.io/"/>
-  <updated>2013-12-16T22:38:03-05:00</updated>
+  <updated>2013-12-18T21:01:18-05:00</updated>
   <id>http://argo49.github.io/</id>
   <author>
     <name><![CDATA[Tyler Argo]]></name>
@@ -23,7 +23,7 @@
 
 
 
-<p>An example: Company A is working on a project that uses an open source tool that hasnt been maintained for a while because the people who maintain it have mostly stopped development on the project due to a lack of interest/funding. Company A would really like to see feautre X in the tool. Otherwise, they&#8217;ll have to remove the tool from their project and start again from scratch with something else that has that feature. The problem is that that takes time and money and it might not suit all their other needs. In swoops Boutnycource in all it&#8217;s greenish glory! Company A posts a bounty of Y dollars on Bountysource. John the part-time developer sees this bounty, knows he could add the feature in a reasonable amount of time and sets to work on it. A short time later, the feature is implemented, John gets paid and Company A has saved lots of time and money. That&#8217;s just one idyllic scenario that makes Bountysource so attractive.</p>
+<p>An example: Company A is working on a project that uses an open source tool that hasn’t been maintained for a while because the people who maintain it have mostly stopped development on the project due to a lack of interest/funding. Company A would really like to see feature X in the tool. Otherwise, they&#8217;ll have to remove the tool from their project and start again from scratch with something else that has that feature. The problem is that that takes time and money and it might not suit all their other needs. In swoops Boutnysource in all it&#8217;s greenish glory! Company A posts a bounty of Y dollars on Bountysource. John the part-time developer sees this bounty, knows he could add the feature in a reasonable amount of time and sets to work on it. A short time later, the feature is implemented, John gets paid and Company A has saved lots of time and money. That&#8217;s just one idyllic scenario that makes Bountysource so attractive.</p>
 
 
 
@@ -56,9 +56,7 @@
     <ol>
         <li>Anyone can come to Bountysource and create a Fundraiser. Open-source fundraisers are typically used to raise money for new projects, big updates to existing projects, or to raise money for bounties.</li>
         <li>The Fundraiser creator spreads the word about the Fundraiser to the appropriate communities.</li>
-        <li>Users find bounties on open issues or feature requests they want to see addressed.</li>
-        <li>Users find bounties on open issues or feature requests they want to see addressed.</li>
-        <li>Users find bounties on open issues or feature requests they want to see addressed.</li>
+        <li>Anyone can come to Bountysource and make pledges to a Fundraiser, helping it reach its funding goal in time.</li>
     </ol>
 </blockquote>
 
