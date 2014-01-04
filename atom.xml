@@ -4,7 +4,7 @@
   <title><![CDATA[Whitespaces and Curly Braces]]></title>
   <link href="http://argo49.github.io/atom.xml" rel="self"/>
   <link href="http://argo49.github.io/"/>
-  <updated>2013-12-18T22:36:16-05:00</updated>
+  <updated>2014-01-04T15:45:52-05:00</updated>
   <id>http://argo49.github.io/</id>
   <author>
     <name><![CDATA[Tyler Argo]]></name>
@@ -12,6 +12,138 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Changing the Octopress Code Theme to Something More Sublime]]></title>
+    <link href="http://argo49.github.io/blog/2014/01/04/changing-the-octopress-code-theme-to-something-more-sublime/"/>
+    <updated>2014-01-04T14:19:11-05:00</updated>
+    <id>http://argo49.github.io/blog/2014/01/04/changing-the-octopress-code-theme-to-something-more-sublime</id>
+    <content type="html"><![CDATA[<p>One of the first things I noticed when looking into using Octopress was the default theme used for code examples. I’m not usually hugely picky about the color scheme of my code, but I like it to at least match its surroundings and be as easy on the eyes as possible. Vanilla Octopress comes with two different themes, a light theme and a dark theme:</p>
+
+<h4>Light</h4>
+
+
+<p><img class="center" src="http://argo49.github.io/images/customizingCodeTheme/code_gross_beige.png" title="image" alt="images"></p>
+
+<h4>Dark</h4>
+
+
+<p><img class="center" src="http://argo49.github.io/images/customizingCodeTheme/original_code.png" title="image" alt="images"></p>
+
+<p>As you can probably tell, neither of those suit the design of my blog (or at least, not as well as I’d like at the time of this writing) and if you’re reading this article then chances are it doesn’t suit your design either. Hopefully this post can help.</p>
+
+<p>This might not be the best tutorial (it’s pretty quick and dirty), but it will give you complete control over the styling of your octopress code blocks and give you a better sense of how things fit together.</p>
+
+<p>My editor of choice is the beautiful Sumblime Text editor that looks a little something like this:</p>
+
+<p><img class="center" src="http://argo49.github.io/images/customizingCodeTheme/st.png" title="image" alt="images"></p>
+
+<p>Wouldn’t it be nice to have that style here? As far as I know, there are no drag-and-drop solutions to code theming in octopress, so it’s time to dive right into the style-sheets themselves and do some asploring!</p>
+
+<p>Octopress uses SASS CSS preprocessing to generate its style-sheets. For more information on SASS check <a href="http://sass-lang.com/guide">here</a>. I highly recommend using it since without it, extensive style-sheets can become a horrible repeating steaming file of mess and disarray.</p>
+
+<h4>Changing the Code Font:</h4>
+
+
+<p>The first thing I wanted to change was the font used in the code blocks. Sublime Text uses “Consolas” as its default font but I want to use something that matches my blog’s font. I decided on using the <a href="http://www.google.com/fonts/specimen/Ubuntu+Mono">Ubuntu Mono</a> font for this example.</p>
+
+<p>I really like <a href="http:\/\/www.google.com/fonts">Google Fonts</a>. You can find whatever font you want to use from there and include it in your html with the code provided by google. It&rsquo;s like a CDN for fonts! I ended up importing the font through a link html tag in the head, but you can also do this through an <code>@import</code> statement in CSS. To change the head tag of your blog, you can edit the code found in <code>source_includes\custom\head.html</code> and add the link tag to the font there:</p>
+
+<p><code>&lt;link href=&ldquo;<a href="http://fonts.googleapis.com/css?family=Ubuntu+Mono">http://fonts.googleapis.com/css?family=Ubuntu+Mono</a>&rdquo; rel=&ldquo;stylesheet&rdquo; type=&ldquo;text/css&rdquo;&gt;</code></p>
+
+<p>Now that we&rsquo;ve imported the font from google, we need to tell SASS where to use it!</p>
+
+<p>As you might expect, the font types are specified in the sass file called <code>_typography.scss</code>.
+This file can be found in <code>sass\base_typography.scss</code></p>
+
+<p>Now change the mono font variable (should be on line four-ish) to the new one you’ve picked. In my case my new mono font looks like this:</p>
+
+<p><code>$mono: &lsquo;Ubuntu Mono&rsquo;, sans-serif !default;</code></p>
+
+<p>Now in the sass files, whenever you reference the variable <code>$mono</code>, you’re referencing the imported google font. For more information on what that !default does check <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variable_defaults_">this out</a>, but it pretty much does exactly what you’d think it’d do.</p>
+
+<p>So now we have some shiny new font! Check it out!</p>
+
+<p><img class="center" src="http://argo49.github.io/images/customizingCodeTheme/code_new_font.png" title="image" alt="images"></p>
+
+<h4>Changing the Header:</h4>
+
+
+<p>Now how about we change that gross silver bar at the top of the block? Right now it’s using an image file found in source\images\code_bg.png, so lets go into the sass and tell it to drop that image like it’s hot.</p>
+
+<p>Most code formatting style stuff is handled in the <code>_syntax.scss</code> file found in <code>sass\partials_syntax.scss</code>. You can change the background of the title bar on line 245. I’ve changed it from<br/><br/><code>css background: #aaaaaa image-url(&ldquo;code_bg.png&rdquo;) top repeat-x;</code><br/>to<br/><code>css background:  #FAFAFA;</code></p>
+
+<p>I’m a simple man and I like my font to be simple as well. I’ve also changed the font on line 244 from<br/><br/><code>css font-family:&ldquo;Helvetica Neue&rdquo;, Arial, &ldquo;Lucida Grande&rdquo;, &ldquo;Lucida Sans Unicode&rdquo;, Lucida, sans-serif;</code><br/>to<br/><code>css font-family: $mono; </code></p>
+
+<p>I also got rid of the text shadow on line 239. Not my style.</p>
+
+<p>So now we got something that looks like this:</p>
+
+<p><img class="center" src="http://argo49.github.io/images/customizingCodeTheme/code_new_header.png" title="image" alt="images"></p>
+
+<p>Getting closer! Now let’s get into the fun stuff:</p>
+
+<h4>Changing Colors:</h4>
+
+
+<p>All code colors are stored in <code>sass\base\_solarized.scss</code> as variables. The variables that have a 0 in front of the postfix are the colors used for the “dark” theme and the others for the light theme.  There’s a conditional statement that controls the theme that inverts the colors based on whether or not you want a dark theme or light theme. Dont worry about that all that too much (unless you plan on using both themes) and use the comments as a point of reference.</p>
+
+<p>These color variables are used mostly in <code>sass\partials\_syntax.css</code> for code syntax highlighting.</p>
+
+<p>The <code>$solarized</code> variable on line 18 is what  lets you choose between using the dark and light themes like those pictured at the start of this post.</p>
+
+<p>To get that sublime feel, I took a print-screen of a page of code in my sublime editor and used the eyedropper tool in GIMP 2.0 to get the hex values of the colors. You can change them to whatever colors you want though. Let me walk you through that process a bit.</p>
+
+<h4>Background Colors:</h4>
+
+
+<p>The code background color is the first line in _solarized.scss with the comment &lsquo;darkest blue&rsquo;. I set this to sublime black:</p>
+
+<p>line 1: <code>$base03: #272822 !default;</code></p>
+
+<p>The line numbers background (that strip on the left of the code) is $base02. I decided to choose the same light grey as the selected line in sublime text which came out to this:</p>
+
+<p>line 2: <code>$base02: #3e3d32 !default;</code></p>
+
+<h4>Line Numbers:</h4>
+
+
+<p>Again, taking my trusty eyedropper, I scraped the line number text color from sublime and inserted it into line 20 of <code>_syntax.scss</code> to make all spans of the line-numbers class have that soft shade of white.</p>
+
+<p>line 20: <code>span{color:#8f908a !important;}</code></p>
+
+<p>Ok! so now we’ve changed some colors, let’s take a gander:</p>
+
+<p><img class="center" src="http://argo49.github.io/images/customizingCodeTheme/code_new_header_new_bg.png" title="image" alt="images"></p>
+
+<p>Now there’s only one thing left to do&hellip;</p>
+
+<h4>Code Syntax Highlighting Colors:</h4>
+
+
+<p>You can change it to whatever you want based on the short classes in <code>_syntax.scss</code>.</p>
+
+<p>Actual syntax highlighting is done with the python plugin pygments.py during the generate process so if you want to really customize your code syntax highlighting, <a href="http://pygments.org/">look into it</a>. As far as I can understand, it works in concert with Liquid, the templating engine octopress uses to wrap the code input in differently classed span tags that get their colors from the <code><em>syntax.scss</code> file. By changing the color variables in the <code></em>solarized.scss</code> file and using those variables to change the colors in those tiny pygment span classes in <code>_syntax.css</code> (roughly lines 128-193) then you can customize the syntax highlighting colors. Again, I used my eyedropper method to rip the colors from sublime and change the color variables with those ripped colors.</p>
+
+<p>A bit of a warning: Changing the colors of the pygment classes may look great in one language but horrible in another. This is because pygements reuses classes between languages and sometimes you get code that has classes who’s colors don’t play nice. Change this around at your own risk, but with enough fiddling, I think it can look great for any language. So here’s the finished product:</p>
+
+<p><img class="center" src="http://argo49.github.io/images/customizingCodeTheme/code_new_highlighting.png" title="image" alt="images"></p>
+
+<p>Very sublimey, and definitely better than the default at least. So go nuts and make your own custom code theme!</p>
+
+<p>This is the code theme I’m currently using, incase you’re reading this post from the futurree:</p>
+
+<figure class='code'><figcaption><span>A fine day for pretty code  </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">someVar</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hellow World! &quot;</span><span class="p">,</span> <span class="nx">i</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Boutysource: A Bountiful Force for Open Source]]></title>
