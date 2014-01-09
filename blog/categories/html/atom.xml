@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: HTML, | Whitespaces and Curly Braces]]></title>
+  <link href="http://argo49.github.io/blog/categories/html/atom.xml" rel="self"/>
+  <link href="http://argo49.github.io/"/>
+  <updated>2014-01-09T11:56:01-05:00</updated>
+  <id>http://argo49.github.io/</id>
+  <author>
+    <name><![CDATA[Tyler Argo]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Absolute Positioning in a Relatively Positioned Div]]></title>
+    <link href="http://argo49.github.io/blog/2014/01/09/absolute-positioning-in-a-relatively-positioned-div/"/>
+    <updated>2014-01-09T11:43:22-05:00</updated>
+    <id>http://argo49.github.io/blog/2014/01/09/absolute-positioning-in-a-relatively-positioned-div</id>
+    <content type="html"><![CDATA[<p>This is one of those reminder posts.</p>
+
+<p>Absolute positioning is great! It lets you position elements anywhere in the document with respect to the document body, even on top of other elements. That can be useful in some scenarios, but what I often find myself wanting to do is to absolutely position elements not with respect to the document body, but with respect to it&rsquo;s containing element. For some reason I always forget how.</p>
+
+<p>When an absolutely positioned element (an element with CSS style <code>position: absolute</code>) is given a left, right, top or bottom value, it is positioned with respect to the top left corner of the document, even when it is nested inside other elements. This is always the case EXCEPT when its direct parent element has <code>position: relative</code>. In this situation, the absolute positioning (top, left, right and bottom) is done with respect to the top left corner of this parent element! Also, properties that reference percentages are also now taken with respect to the relatively positioned parent element, so <code>width: 50%</code> is not 50% the width of the entire document, but 50% of the parent element. Good to know!</p>
+
+<p>Leave me a comment if I&rsquo;m mistaken with anything I&rsquo;ve said in this post.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -9,7 +9,7 @@
   <meta name="author" content="Tyler Argo">
 
   
-  <meta name="description" content="One of the first things I noticed when looking into using Octopress was the default theme used for code examples. I’m not usually hugely picky &hellip;">
+  <meta name="description" content="This is one of those reminder posts. Absolute positioning is great! It lets you position elements anywhere in the document with respect to the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -59,6 +59,48 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/09/absolute-positioning-in-a-relatively-positioned-div/">Absolute Positioning in a Relatively Positioned Div</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-09T11:43:22-05:00" pubdate data-updated="true">Jan 9<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is one of those reminder posts.</p>
+
+<p>Absolute positioning is great! It lets you position elements anywhere in the document with respect to the document body, even on top of other elements. That can be useful in some scenarios, but what I often find myself wanting to do is to absolutely position elements not with respect to the document body, but with respect to it&rsquo;s containing element. For some reason I always forget how.</p>
+
+<p>When an absolutely positioned element (an element with CSS style <code>position: absolute</code>) is given a left, right, top or bottom value, it is positioned with respect to the top left corner of the document, even when it is nested inside other elements. This is always the case EXCEPT when its direct parent element has <code>position: relative</code>. In this situation, the absolute positioning (top, left, right and bottom) is done with respect to the top left corner of this parent element! Also, properties that reference percentages are also now taken with respect to the relatively positioned parent element, so <code>width: 50%</code> is not 50% the width of the entire document, but 50% of the parent element. Good to know!</p>
+
+<p>Leave me a comment if I&rsquo;m mistaken with anything I&rsquo;ve said in this post.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -375,6 +417,10 @@ This file can be found in <code>sass\base_typography.scss</code></p>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/01/09/absolute-positioning-in-a-relatively-positioned-div/">Absolute Positioning in a Relatively Positioned Div</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/01/04/changing-the-octopress-code-theme-to-something-more-sublime/">Changing the Octopress Code Theme to Something More Sublime</a>
