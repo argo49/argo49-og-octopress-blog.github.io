@@ -4,7 +4,7 @@
   <title><![CDATA[Whitespaces and Curly Braces]]></title>
   <link href="http://argo49.github.io/atom.xml" rel="self"/>
   <link href="http://argo49.github.io/"/>
-  <updated>2014-01-09T11:56:01-05:00</updated>
+  <updated>2014-01-17T17:54:37-05:00</updated>
   <id>http://argo49.github.io/</id>
   <author>
     <name><![CDATA[Tyler Argo]]></name>
@@ -12,6 +12,167 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[This Is It: Using the 'This' Keyword in JavaScript]]></title>
+    <link href="http://argo49.github.io/blog/2014/01/17/this-is-it-using-the-this-keyword-in-javascript/"/>
+    <updated>2014-01-17T16:28:05-05:00</updated>
+    <id>http://argo49.github.io/blog/2014/01/17/this-is-it-using-the-this-keyword-in-javascript</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m currently reading through Douglas Crockford&rsquo;s &ldquo;Javascript: The Good Parts&rdquo; and one of the most useful things I&rsquo;ve seen in that book is his explanation of how the <code>this</code> keyword is used in different circumstances. The following may have excerpts from the book that I may not have quoted. Except for the code, that&rsquo;s all mine :)</p>
+
+<p>Primarily, the <code>this</code> parameter&rsquo;s value is determined by the function&rsquo;s invocation pattern. What is an invocation pattern you might ask? An invocation pattern is how the function is called or <em>invoked</em>. There are four different invocation patterns that affect the <code>this</code> keyword:</p>
+
+<ol>
+    <li>
+        <h3>The Method Invocation Pattern</h3>
+        <ul>
+            <li>A Method is a function that is stored as a property of an object.</li>
+            <li>When a method is invoked, <code>this</code> is bound to that object.</li>
+            <li>The binding of <code>this</code> happens at invocation time (late binding).</li>
+        </ul>
+        <br/>
+        <p>Here&#8217;s an example:</p>
+        <iframe
+            style="width: 100%; height: 300px"
+            src="http://jsfiddle.net/argo49/Sr378/embedded">
+        </iframe>
+    </li>
+    <li>
+        <h3>The Function Invocation Pattern</h3>
+        <ul>
+            <li>When a function is not the property of an object, then it is invoked as a function.</li>
+            <li><code>this</code> is bound to the global object (weird but kind of makes sense).</li>
+            <li>A work-around for it is to assign variable <code>that</code> and assign it the outer <code>this</code> and then use <code>that</code> in the inner function.</li>
+            <p>When a function isn&#8217;t a property of an object, then it&#8217;s usually defined out in the open like this:</p>
+            
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">increment</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// this here refers to the global object</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>          
+</span></code></pre></td></tr></table></div></figure>
+
+            <p>If that&#8217;s the case, then it makes sense that <code>this</code> gets bound to the global object. Where it gets weird is that even when you nest that function inside another, <code>this</code> still refers to the global object!</p>
+            
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{};</span>
+</span><span class='line'><span class="nx">object</span><span class="p">.</span><span class="nx">number</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'><span class="nx">object</span><span class="p">.</span><span class="nx">divideByInt</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">intNumber</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// here this still refers to the object</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">quotient</span>  <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">number</span> <span class="o">/</span> <span class="nx">intNumber</span><span class="p">);</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">remainder</span> <span class="o">=</span> <span class="nx">findRemainder</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">function</span> <span class="nx">findRemainder</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>      <span class="c1">// In here, this refers to the global object!</span>
+</span><span class='line'>      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">number</span> <span class="o">%</span> <span class="nx">intNumber</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// here this refers to the object again</span>
+</span><span class='line'>  <span class="k">this</span><span class="p">.</span><span class="nx">number</span> <span class="o">=</span> <span class="nx">quotient</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">remainder</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>          
+</span></code></pre></td></tr></table></div></figure>
+
+            <p>A work-around for this (no pun intended) that&#8217;s found in Crockford&#8217;s book and widely used is using a <code>that</code> variable.</p>
+            
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{};</span>
+</span><span class='line'><span class="nx">object</span><span class="p">.</span><span class="nx">number</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'><span class="nx">object</span><span class="p">.</span><span class="nx">divideByInt</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">intNumber</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// here this still refers to the object</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">quotient</span>  <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">number</span> <span class="o">/</span> <span class="nx">intNumber</span><span class="p">);</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">remainder</span> <span class="o">=</span> <span class="nx">findRemainder</span><span class="p">();</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">that</span>      <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">function</span> <span class="nx">findRemainder</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>      <span class="c1">// In here, this refers to the global object! Let&#39;s use that instead</span>
+</span><span class='line'>      <span class="k">return</span> <span class="nx">that</span><span class="p">.</span><span class="nx">number</span> <span class="o">%</span> <span class="nx">intNumber</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// here this refers to the object again</span>
+</span><span class='line'>  <span class="k">this</span><span class="p">.</span><span class="nx">number</span> <span class="o">=</span> <span class="nx">quotient</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">remainder</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>          
+</span></code></pre></td></tr></table></div></figure>
+
+        </ul>
+    </li>
+    <li>
+        <h3>The Constructor Invocation Pattern</h3>
+        <ul>
+            <li>Functions that are intended to be used with the <code>new</code> prefix are called constructors.</li>
+            <li>A <code>this</code> referenced in a constructor refers to a newly created object that points to the constructor’s <code>prototype</code> member.</li>
+        </ul>
+        <br/>
+        <p>Here&#8217;s an example:</p>
+        <iframe
+            style="width: 100%; height: 300px"
+            src="http://jsfiddle.net/argo49/CC8cA/embedded">
+        </iframe>
+    </li>
+    <li>
+        <h3>The Apply Invocation Pattern</h3>
+        <ul>
+            <li>This one lets us choose the value of <code>this</code> for ourselves!</li>
+            <li>
+                <code>apply()</code> takes two parameters:
+                <ol>
+                    <li>A value that will be bound to <code>this</code></li>
+                    <li>An array of paramters to pass to the function.</li>
+                </ol>
+            </li>
+            <br/>
+            <p><code>apply()</code> is a built in JavaScript method that will execute a function with the above conditions. Here&#8217;s what I mean:</code></p>
+        </ul>
+        <iframe
+            style="width: 100%; height: 300px"
+            src="http://jsfiddle.net/argo49/jqBcL/embedded">
+        </iframe>
+    </li>
+</ol>
+
+
+<p>So there you have it! Four things to remember about the <code>this</code> keyword isnt so bad, right?</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Absolute Positioning in a Relatively Positioned Div]]></title>
