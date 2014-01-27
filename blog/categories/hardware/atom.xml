@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Hardware, | Whitespaces and Curly Braces]]></title>
+  <link href="http://argo49.github.io/blog/categories/hardware/atom.xml" rel="self"/>
+  <link href="http://argo49.github.io/"/>
+  <updated>2014-01-26T19:51:12-05:00</updated>
+  <id>http://argo49.github.io/</id>
+  <author>
+    <name><![CDATA[Tyler Argo]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Budget Gaming PC]]></title>
+    <link href="http://argo49.github.io/blog/2014/01/26/budget-gaming-pc/"/>
+    <updated>2014-01-26T13:49:39-05:00</updated>
+    <id>http://argo49.github.io/blog/2014/01/26/budget-gaming-pc</id>
+    <content type="html"><![CDATA[<p>This is a budget gaming rig I built for a friend of mine who was in desperate need of an upgrade, and this is quite an upgrade to his almost decade-old laptop that could only run the simplest of indie games. Now he can enjoy the full spectrum of games he&rsquo;s bought on steam and doesn&rsquo;t have to worry if they will run or not.</p>
+
+<p>As you can tell by this picture of the build after its first POST, I&rsquo;m no photographer. But I still think it looks good :D
+<img class="center" src="/images/braniBuild/PC_optimized.jpg" title="&lsquo;image&rsquo; &lsquo;images&rsquo;" ></p>
+
+<h2>The Parts List</h2>
+
+
+<ul>
+    <li><a href="http://www.newegg.ca/Product/Product.aspx?item=N82E16811146102">NZXT Source 210 S210-001 Black Computer Case With Side Panel Window</a></li>
+    <li><a href="http://www.newegg.ca/Product/Product.aspx?item=N82E16833315091">EDIMAX EW-7811Un USB 2.0 Wireless nano Adapter</a></li>
+    <li><a href="http://www.newegg.ca/Product/Product.aspx?item=N82E16817182131">Rosewill HIVE Series HIVE-550 550W, Modular Design, Active-PFC Power Supply</a></li>
+    <li><a href="http://www.newegg.ca/Product/Product.aspx?item=N82E16827135305">ASUS DVD-Writer Black SATA Model DRW-24F1ST</a></li>
+    <li><a href="http://www.newegg.ca/Product/Product.aspx?item=N82E16819113286">AMD FX-6300 3.5GHz (4.1GHz Turbo) Socket AM3+ Six-Core Desktop Processor</a></li>
+    <li><a href="http://www.newegg.ca/Product/Product.aspx?item=N82E16822148840">Seagate Barracuda ST1000DM003 1TB 7200 RPM 64MB Cache SATA 6.0Gb/s 3.5" Internal Hard Drive</a></li>
+    <li><a href="http://www.newegg.ca/Product/Product.aspx?item=N82E16813157396">ASRock 960GM-VGS3 FX Micro ATX AMD Motherboard</a></li>
+    <li><a href="http://www.newegg.ca/Product/Product.aspx?item=N82E16820231276">G.SKILL Ripjaws Series 4GB (2 x 2GB) 240-Pin DDR3 SDRAM DDR3 1333 (PC3 10666) Desktop Memory</a></li>
+    <li><a href="http://www.newegg.ca/Product/Product.aspx?Item=N82E16814150688">XFX R7-260X-ZNJ4 Core Edition Radeon R7 260X 1GB 128-bit GDDR5 PCI Express 3.0 CrossFireX Support Video Card</a></li>
+</ul>
+
+
+<p>And this is a picture of the 260X. Is rly nice. Works good too.
+<img class="center" src="/images/braniBuild/gpu_optimized.jpg" title="&lsquo;image&rsquo; &lsquo;images&rsquo;" ></p>
+
+<p>The build went pretty well, although the CD/DVD burner from ASUS ended up being a dud. I picked up another one for him at a hardware store and other than some driver issues (I&rsquo;m looking at you AMD), it was smooth sailing from there!</p>
+
+<p>Total Build Price: 590.00$ ish, crazy Quebec tax and shipping included.</p>
+]]></content>
+  </entry>
+  
+</feed>
